@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block importform %}
+<div class="loginbar-18">
+    <section class="hero-18">
+        <div class="sin-sup-18" align="center">
+            <h2 class="head-18">Welcome To Our Exportza</h2>
+            <a href="/Register/"><button class="si-18">Register</button></a>
+            <a href="/Login/"><button class="su-18">Log In</button></a>
+        </div>
+    </section>
+</div>
+<div class="container-20">
+    <form method="post" action="{% url 'importform' %}" class="ex-form-20" onsubmit="generateID(8)">
+        {% csrf_token %}
+        <table class="ex-table-20">
+            <th colspan="2">
+                <marquee behavior="" direction="right" class="th-20">Import Order Form</marquee>
+            </th>
+            <tr>
+                <td><label for="customerName">Customer Name:</label></td>
+                <td><input type="text" id="customerName-20" name="customerName" required placeholder="Enter Customer Name"></td>
+            </tr>
+
+            <tr>
+                <td><label for="email">Email Address:</label></td>
+                <td><input type="email" id="email-20" name="email" required placeholder="Enter Email Address"></td>
+            </tr>
+
+            <tr>
+                <td><label for="email">Contect Number:</label></td>
+                <td><input type="number" id="number" name="number" required placeholder="Enter Your Number"></td>
+            </tr>
+
+            <tr>
+                <td><label for="product">Product Name:</label></td>
+                <td><input type="text" id="product-20" name="product" required placeholder="Enter Product Name"></td>
+            </tr>
+
+            <tr>
+                <td><label for="quantity">Quantity:</label></td>
+                <td><input type="text" id="quantity-20" name="quantity" required placeholder="Enter Quantity"></td>
+            </tr>
+            
+            <tr>
+                <td><label for="state">Select State:</label></td>
+                <td>
+                    <select id="state-20" name="state" required >
+                        <option selected>---Select State---</option>
+                        <option value="andhra">Andhra Pradesh</option>
+                        <option value="arunachal">Arunachal Pradesh</option>
+                        <option value="assam">Assam</option>
+                        <option value="bihar">Bihar</option>
+                        <option value="chhattisgarh">Chhattisgarh</option>
+                        <option value="goa">Goa</option>
+                        <option value="gujarat">Gujarat</option>
+                        <option value="haryana">Haryana</option>
+                        <option value="himachal">Himachal Pradesh</option>
+                        <option value="jharkhand">Jharkhand</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="mp">Madhya Pradesh</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="manipur">Manipur</option>
+                        <option value="meghalaya">Meghalaya</option>
+                        <option value="mizoram">Mizoram</option>
+                        <option value="nagaland">Nagaland</option>
+                        <option value="odisha">Odisha</option>
+                        <option value="punjab">Punjab</option>
+                        <option value="rajasthan">Rajasthan</option>
+                        <option value="sikkim">Sikkim</option>
+                        <option value="tn">Tamil Nadu</option>
+                        <option value="telangana">Telangana</option>
+                        <option value="tripura">Tripura</option>
+                        <option value="up">Uttar Pradesh</option>
+                        <option value="uttarakhand">Uttarakhand</option>
+                        <option value="wb">West Bengal</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="address">Shipping Address:</label></td>
+                <td><textarea id="address-20" name="address-20" rows="4" required placeholder="Enter Shipping Address"></textarea></td>
+            </tr>
+
+            <tr>
+                <td><label for="payment">Payment Method:</label></td>
+                <td>
+                    <select id="payment-20" name="payment" required>
+                        <option selected>---Select Payment Method---</option>
+                        <option value="creditCard">Credit Card</option>
+                        <option value="bankTransfer">Bank Transfer</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit" id="btn-20">Submit Order</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+    function generateID(limit) {
+            var digits = '0123456789'
+            let ID = ''
+            for (let i = 0; i < limit; i++) {
+                ID += digits[Math.floor(Math.random() * 10)]
+            }
+            return alert("Save the Id:" + ID)
+        }
+</script>
+{% endblock %}

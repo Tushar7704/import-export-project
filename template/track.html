@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+
+{% block track %}
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+header .logo h1 {
+  margin: 0;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+header .user-profile {
+  display: flex;
+  align-items: center;
+}
+
+header .user-profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.main-content {
+  display: flex;
+  padding-top: 20px;
+  margin: 20px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.filters {
+  width: 20%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filters form {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters label {
+  margin-top: 10px;
+}
+
+.filters select,
+.filters input,
+.filters button {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filters button {
+  background-color: #333;
+  color: white;
+  border: none;
+}
+
+.product-tracking {
+  width: 75%;
+  margin-left: 20px;
+}
+
+.product-tracking table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-tracking th,
+.product-tracking td {
+  padding: 12px;
+  border: 1px solid #333;
+  text-align: left;
+}
+
+.product-tracking tr:hover {
+  background-color: #f1f1f1;
+}
+
+.status.nation {
+  color: orange;
+}
+
+.status.delivered {
+  color: green;
+}
+
+.status.id {
+  color: blue;
+}
+
+.status.pro {
+  color: red;
+}
+.status.pro-date {
+  color: darkmagenta;
+}
+
+.product-detail-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.product-detail-modal .modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 60%;
+}
+
+.product-detail-modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+</style>
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+
+    <!-- Product Tracking Table Section -->
+    
+    <section class="product-tracking">
+      <h2 align="center">Product Tracking</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Tracking Number</th>
+            <th>Status</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Estimated Delivery</th>
+            <th>Date Shipped</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in product %}
+          <tr onclick="showDetails('123456789')">
+            <td class="status pro">{{p.productname}}</td>
+            <td class="status id">{{p.tracknumber}}</td>
+            <td class="status delivered">{{p.status}}</td>
+            <td class="status nation">{{p.origin}}</td>
+            <td class="status nation">{{p.destination}}</td>
+            <td class="status pro-date">{{p.estimatedlv}}</td>
+            <td class="status pro-date">{{p.dateshiped}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- Product Detail Modal -->
+  <div class="product-detail-modal" id="product-detail-modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Product Details</h2>
+      <div id="product-detail">
+        <!-- Product details will be populated here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    const details = productDetails[trackingNumber];
+      if (details) {
+        document.getElementById('product-detail').innerHTML = `
+          <p><strong>Product Name:</strong> ${details.productName}</p>
+          <p><strong>Tracking Number:</strong> ${details.trackingNumber}</p>
+          <p><strong>Status:</strong> ${details.status}</p>
+          <p><strong>Current Location:</strong> ${details.currentLocation}</p>
+          <p><strong>Estimated Delivery:</strong> ${details.estimatedDelivery}</p>
+          <p><strong>Shipping History:</strong></p>
+          <ul>
+            ${details.shippingHistory.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+          <p><strong>Carrier:</strong> ${details.carrier}</p>`;
+        document.getElementById('product-detail-modal').style.display = 'block';
+      }
+    
+
+    function closeModal() {
+      document.getElementById('product-detail-modal').style.display = 'none';
+    }
+
+  </script>
+
+{% endblock %}

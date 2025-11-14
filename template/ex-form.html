@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block exportform %}
+
+<div class="loginbar-18">
+    <section class="hero-18">
+        <div class="sin-sup-18" align="center">
+            <h2 class="head-18">Welcome To Our Exportza</h2>
+            <a href="/Register/"><button class="si-18">Register</button></a>
+            <a href="/Login/"><button class="su-18">Log In</button></a>
+        </div>
+    </section>
+</div>
+
+<div class="container-20">
+    <form method="post" action="{% url 'exorder' %}" class="ex-form-20" onsubmit="showpop()">
+        {% csrf_token %}
+        <table class="ex-table-20">
+            <th colspan="2">
+                <marquee behavior="" direction="right" class="th-20">Export Order Form</marquee>
+            </th>
+            <tr>
+                <td><label for="customerName">Customer Name:</label></td>
+                <td><input type="text" id="customerName-20" name="customerName" required placeholder="Enter Customer Name"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email Address:</label></td>
+                <td><input type="email" id="email-20" name="email" required placeholder="Enter Email Address"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Contect Number:</label></td>
+                <td><input type="number" id="number" name="number" required placeholder="Enter Your Number"></td>
+            </tr>
+            <tr>
+                <td><label for="product">Product Name:</label></td>
+                <td><input type="text" id="product-20" name="product" required placeholder="Enter Product Name"></td>
+            </tr>
+            <tr>
+                <td><label for="quantity">Quantity:</label></td>
+                <td><input type="number" id="quantity-20" name="quantity" required placeholder="Enter Quantity"></td>
+            </tr>
+            <tr>
+                <td><label for="country">Export Country:</label></td>
+                <td>
+                    <select id="country-20" name="country" required>
+                        <option selected>---Select Export Country--- </option>
+                        <option value="Russia">Russia</option>
+                        <option value="SA">South Africa</option>
+                        <option value="UAE">United Arab Emirates</option>
+                        <option value="Iran">Iran</option>
+                        <option value="SK">South Korea</option>
+                        <option value="Israel">israel</option>
+                        <option value="SA">Soudi Arabia</option>
+                        <option value="SL">Sri Lanka</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Canada">Canada</option>
+                        <option value="France">France</option>
+                        <option value="Australia">Australia</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="USA">United States of America</option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="BD">Bangladesh</option>
+                        <option value="BT">Bhutan</option>
+                        <option value="EG">Egypt</option>
+                        <option value="MX">Mexico</option>
+                        <option value="NP">Nepal</option>
+                        <option value="NZ">New Zealand</option>
+                        <option value="CN">China</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="address">Shipping Address:</label></td>
+                <td><textarea id="address-20" name="address-20" rows="4" required placeholder="Enter Shipping Address"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="payment">Payment Method:</label></td>
+                <td>
+                    <select id="payment-20" name="payment" required>
+                        <option selected>---Select Payment Method---</option>
+                        <option value="creditCard">Credit Card</option>
+                        <option value="bankTransfer">Bank Transfer</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit" id="btn-20">Submit Order</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+    function showpop(){
+        alert("Your Export Request Send Successfull!")
+    }
+</script>
+{% endblock %}

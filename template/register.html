@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block register %}
+<style>
+  .rg-form-div{
+    width: 37.5%;
+  }
+</style>
+<div class="loginbar-18">
+  <section class="hero-18">
+    <div class="sin-sup-18" align="center">
+      <h2 class="head-18">Welcome To Our Exportza</h2>
+      <a href="/Register/"><button class="si-18">Register</button></a>
+      <a href="/Login/"><button class="su-18">Log In</button></a>
+    </div>
+  </section>
+</div>
+<br/>
+<div class="rg-form-div">
+  {% for msg_wrong_pass in messages %}
+  <div>
+    {{msg_wrong_pass}}
+  </div>
+  {% endfor %}
+  <form method="post" action="{% url 'rgst' %}">
+    {% csrf_token %}
+    <table cellpadding="10" align="center" class="form-tbl-18">
+      <th align="center" colspan="2" class="form-tbl-th-18">
+        <marquee behavior="" direction="right">REGISTER YOUR ACCOUNT</marquee>
+      </th>
+      <tr class="form-tbl-tr-1">
+        <td>NAME :</td>
+        <td>
+          <input type="text" id="name" name="rgname" required placeholder="Enter Name" class="rg-inp-18"/>
+        </td>
+      </tr>
+      <tr class="form-tbl-tr-1">
+        <td>USER NAME :</td>
+        <td>
+          <input type="text" id="username" name="rgusername" required placeholder="Enter User Name" class="rg-inp-18"/>
+        </td>
+      </tr>
+      <tr class="form-tbl-tr-1">
+        <td>EMAIL :</td>
+        <td>
+          <input type="email" id="email" name="rgemail" required placeholder="Enter User Email" class="rg-inp-18"/>
+        </td>
+      </tr>
+      <tr class="form-tbl-tr-1">
+        <td>MOBILE :</td>
+        <td>
+          <input type="number" id="number" name="rgnumber" required placeholder="Enter User Mobile" class="rg-inp-18"/>
+        </td>
+      </tr>
+      <tr class="form-tbl-tr-2">
+        <td>CREATE PASSWORD :</td>
+        <td>
+          <input type="password" id="createpassword" name="rgcpass" placeholder="Create Password" class="rg-inp-18" required/>
+        </td>
+      </tr>
+      <tr class="form-tbl-tr-3">
+        <td>CONFORM PASSWORD :</td>
+        <td>
+          <input type="password" id="conformpassword" name="rgconpass" placeholder="Conform Password" class="rg-inp-18" required/>
+        </td>
+      </tr>
+      <tr class="form-tbl-tr-4">
+        <td colspan="2" align="center">
+          <button type="submit" class="form-tbl-login-18">REGISTER</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+{% endblock %}

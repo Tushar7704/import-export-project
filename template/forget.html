@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block forget %}
+<style>
+    .fg-form-div{
+        width: 37%;
+    }
+</style>
+<div class="loginbar-18">
+    <section class="hero-18">
+        <div class="sin-sup-18" align="center">
+            <h2 class="head-18">Welcome To Our Exportza</h2>
+            <a href="/Register/"><button class="si-18">Register</button></a>
+            <a href="/Login/"><button class="su-18">Log In</button></a>
+        </div>
+    </section>
+</div>
+<br>
+<div class="fg-form-div">
+    <form action="post" class="form-18">
+        <table cellpadding="10" align="center" class="form-tbl-18">
+            <th align="center" colspan="2" class="form-tbl-th-18">
+            <marquee direction="right">
+                Forget Password
+            </marquee></th>
+            <tr class="form-tbl-tr-1">
+            <td>EMAIL/MOBILE NO : </td>
+            <td>
+                <input type="text" name="username" id="username" required placeholder="Enter Email/Mobile No"/>
+            </td>
+        </tr>
+        <tr class="form-tbl-tr-2">
+            <td>ENTER OTP : </td>
+            <td>
+                <input type="number" name="num" id="num" placeholder="Enter OTP" required>
+            </td>
+        </tr>
+        <tr class="form-tbl-tr-2">
+            <td>NEW PASSWORD : </td>
+            <td>
+                <input type="password" name="password" id="password" placeholder="Enter New Password" required>
+            </td>
+        </tr>
+        <tr class="form-tbl-tr-2">
+            <td>RE-ENTER PASSWORD : </td>
+            <td>
+                <input type="password" name="password" id="password" placeholder="Enter Re-Enter Password" required>
+            </td>
+        </tr>
+        <tr class="form-tbl-tr-4">
+            <td colspan="2" align="center"><button type="submit" class="form-tbl-login-18">Conform</button></td>
+        </tr>
+    </table>
+</form>
+</div>
+
+{% endblock %}

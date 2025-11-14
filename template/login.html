@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block login %}
+
+<div class="loginbar-18">
+    <section class="hero-18">
+        <div class="sin-sup-18" align="center">
+            <h2 class="head-18">Welcome To Our Exportza</h2>
+            <a href="/Register/"><button class="si-18">Register</button></a>
+            <a href=""><button class="su-18">Log In</button></a><br>
+        </div>
+    </section>
+</div>
+<br>
+<div class="lg-form-div">
+    <div>
+        {% for msg_wrong_login in messages %}
+            {{msg_wrong_login}}
+        {% endfor %}
+    </div>
+    <form method="post" action="{% url 'singin' %}" class="form-18">
+        {% csrf_token %}
+        <table cellpadding="10" align="center" class="form-tbl-18">
+            <th align="center" colspan="2" class="form-tbl-th-18">
+                <marquee direction="right">
+                    LOG YOUR ACCOUNT
+                </marquee>
+            </th>
+            <tr class="form-tbl-tr-1">
+                <td>USER NAME : </td>
+                <td>
+                    <input type="text" name="lusername" id="username" required placeholder="Enter User Name" />
+                </td>
+            </tr>
+            <tr class="form-tbl-tr-2">
+                <td>PASSWORD : </td>
+                <td>
+                    <input type="password" name="lpassword" id="password" placeholder="Enter Password" required>
+                </td>
+            </tr>
+            <tr class="form-tbl-tr-4">
+                <td colspan="2" align="center"><button type="submit" class="form-tbl-login-18">LOG IN</button></td>
+            </tr>
+        </table>
+    </form>
+    <a href="/Forget/">Forget Password?</a>
+</div>
+
+{% endblock %}

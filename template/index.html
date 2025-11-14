@@ -1,0 +1,377 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>EXPORTZA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon -->
+    <link href="/static/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/static/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark">
+        <div class="row py-2 px-lg-5">
+            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center text-white">
+                    <small><i class="fa fa-phone-alt mr-2"></i>+91 91064 88799</small>
+                    <small class="px-3">|</small>
+                    <small><i class="fa fa-envelope mr-2"></i>exportza18@gmail.com</small>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-white pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+            <a href="/" class="navbar-brand ml-lg-3">
+                <h1 class="m-0 display-5 text-uppercase text-primary"><i class="fa fa-truck mr-2"></i>EXPORTZA</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav m-auto py-0">
+                    <a href="#" class="nav-item nav-link active">Home</a>
+                    <a href="/AboutUs/" class="nav-item nav-link">About</a>
+                    <a href="/Service" class="nav-item nav-link">Service</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Import</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="/Hardware/" class="dropdown-item">Hardware</a>
+                            <a href="/Crude/" class="dropdown-item">Crude Oil</a>
+                            <a href="/Motor/" class="dropdown-item">Motor Vehicle</a>
+                            <a href="/Mechanical" class="dropdown-item">Mechanical appliances</a>
+                        </div>
+                    </div>
+                    <a href="/Export/" class="nav-item nav-link">Export</a>
+                    <a href="/Contact/" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="/Feedback/" class="btn btn-primary py-2 px-4 d-none d-lg-block">Feed Back</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <div class="loginbar-18">
+        <section class="hero-18">
+            <div class="sin-sup-18" align="center">
+                <h2 class="head-18">Welcome To Our Exportza</h2>
+                {% if messages %}
+                <div>
+                    {% for msg in messages %}
+                    <h4>{{msg}}</h4>
+                    {% endfor %}
+                </div>
+                <a href="{% url 'singout' %}"><button> Logout </button></a>
+                {% else %}
+                <a href="/Register/"><button class="si-18">Register</button></a>
+                <a href="/Login/"><button class="su-18">Log In</button></a>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid mb-5">
+        <div class="container text-center py-5">
+            <h1 class="text-primary mb-4">Safe & Faster</h1>
+            <h1 class="text-white display-3 mb-5">Exportza Services</h1>
+            <div class="mx-auto" style="width: 100%; max-width: 600px;">
+                <form method="post" action="{% url 'trackk' %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input type="number" name="txttrackid" class="form-control border-light" style="padding: 30px;"
+                            placeholder="Enter ID" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary px-3">Track & Trace</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <img class="img-fluid w-100" src="/static/img/container.jpg" alt="">
+                    <div class="bg-primary text-dark text-center p-4">
+                        <h3 class="m-0">25+ Years Experience</h3>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
+                    <h1 class="mb-4">Trusted & Faster Exportza Service Provider</h1>
+                    <p class="mb-4" align="justify">"A Trusted and Fast Import-Export Exportza Service Provider
+                        Delivering Reliable,
+                        Efficient, and Seamless International Trade Solutions."</p>
+                    <div class="d-flex align-items-center pt-2">
+                        <button type="button" class="btn-play" data-toggle="modal"
+                            data-src="https://www.youtube.com/embed/td2-ZPbQw_c?si=tkCJzLGaOpXMg-hchttps://www.youtube.com/embed/td2-ZPbQw_c?si=tkCJzLGaOpXMg-hc"
+                            data-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                                allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Services Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Our Services</h6>
+                <h1 class="mb-4">Best Exportza Services</h1>
+            </div>
+            <div class="row pb-3">
+                {% for n in servicedata %}
+                <div class="col-lg-3 col-md-6 text-center mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                        <i class="{{ n.icon }}"></i>
+                        <h6 class="text-white font-weight-medium m-0">{{ n.name }}</h6>
+                    </div>
+                    <p>{{ n.info }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+
+    <!-- Features Start -->
+    <div class="container-fluid bg-secondary my-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid w-100" src="/static/img/feature.jpg" alt="">
+                </div>
+                <div class="col-lg-7 py-5 py-lg-0">
+                    <h6 class="text-primary text-uppercase font-weight-bold">Why Choose Us</h6>
+                    <h1 class="mb-4">Faster, Safe and Trusted Exportza Services</h1>
+                    <p class="mb-4" align="justify">Faster, Safe, and Trusted Exportza Services offer reliable,
+                        efficient, and secure
+                        solutions for all your import-export needs, ensuring timely deliveries and peace of mind.</p>
+                    <ul class="list-inline">
+                        <li>
+                            <h6><i class="far fa-dot-circle text-primary mr-3"></i>Best In Industry</h6>
+                        <li>
+                            <h6><i class="far fa-dot-circle text-primary mr-3"></i>Emergency Services</h6>
+                        </li>
+                        <li>
+                            <h6><i class="far fa-dot-circle text-primary mr-3"></i>24/7 Customer Support</h6>
+                        </li>
+                    </ul>
+                    <a href="/Learn/" class="btn btn-primary mt-3 py-2 px-4">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+    <!-- Team Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Delivery Team</h6>
+                <h1 class="mb-4">Meet Our Delivery Team</h1>
+            </div>
+            <div class="row">
+                {% for n in teamdata %}
+                <div class="col-lg-3 col-md-6">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5">
+                        <div class="card-body text-center p-0">
+                            <img class="card-img-top" src="{{ n.timg }}" alt="">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">{{ n.tname }}</h5>
+
+                            </div>
+                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Testimonial</h6>
+                <h1 class="mb-4">Our Clients Say</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                {% for n in clientdata %}
+                <div class="position-relative bg-secondary p-4">
+                    <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid rounded-circle" src="{{ n.img }}" style="width: 60px; height: 60px;"
+                            alt="">
+                        <div class="ml-3">
+                            <h6 class="font-weight-semi-bold m-0">{{ n.name }}</h6>
+                            <small>{{ n.post }}</small>
+                        </div>
+                    </div>
+                    <p class="m-0" align="justify">{{ n.info }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Section Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Import & Export Section</h6>
+                <h1 class="mb-4">Latest From Section</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="/static/img/blog-1.jpg" alt="">
+                        <div class="position-absolute bg-primary d-flex flex-column align-items-center justify-content-center rounded-circle"
+                            style="width: 60px; height: 60px; bottom: -30px; right: 30px;">
+                            <h4 class="font-weight-bold mb-n1"></h4>
+                            <small class="text-white text-uppercase">IMPORT</small>
+                        </div>
+                    </div>
+                    <div class="bg-secondary" style="padding: 30px;">
+                        <div class="d-flex mb-3">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle" style="width: 40px; height: 40px;"
+                                    src="/static/img/Hardik.jpg" alt="">
+                                <a class="text-muted ml-2" href="">Sondagar Hardik</a>
+                            </div>
+                            <div class="d-flex align-items-center ml-4">
+                                <i class="far fa-bookmark text-primary"></i>
+                                <a class="text-muted ml-2" href="">Import Incharge</a>
+                            </div>
+                        </div>
+                        <h4 class="font-weight-bold mb-3">Import Section</h4>
+                        <p align="justify">
+                            Importing refers to bringing goods or services into a country from abroad for trade or
+                            consumption. It plays a crucial role in global commerce by providing access to products not
+                            produced locally. Efficient import systems contribute to economic growth, market variety,
+                            and competitive pricing.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="/static/img/blog-2.jpg" alt="">
+                        <div class="position-absolute bg-primary d-flex flex-column align-items-center justify-content-center rounded-circle"
+                            style="width: 60px; height: 60px; bottom: -30px; right: 30px;">
+                            <h4 class="font-weight-bold mb-n1"></h4>
+                            <small class="text-white text-uppercase">EXPORT</small>
+                        </div>
+                    </div>
+                    <div class="bg-secondary" style="padding: 30px;">
+                        <div class="d-flex mb-3">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle" style="width: 40px; height: 40px;"
+                                    src="/static/img/dharmik.jpg" alt="">
+                                <a class="text-muted ml-2" href="">Zanzmera Dharmik</a>
+                            </div>
+                            <div class="d-flex align-items-center ml-4">
+                                <i class="far fa-bookmark text-primary"></i>
+                                <a class="text-muted ml-2" href="">Export Incharge</a>
+                            </div>
+                        </div>
+                        <h4 class="font-weight-bold mb-3">Export Section</h4>
+                        <p align="justify">
+                            Exporting involves sending goods or services from one country to another for trade or sale.
+                            It helps businesses reach international markets and stimulates economic growth. A strong
+                            export sector boosts a nation's revenue, creates jobs, and enhances global trade relations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    {% include "footer.html" %}
